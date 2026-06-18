@@ -1,0 +1,111 @@
+@use 'variables';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: variables.$nina-bg-suave;
+    font-family: variables.$fuente-cuerpo;
+    transition: background-color 0.3s ease;
+
+    --color-principal: #{variables.$nina-principal};
+    --color-secundario: #{variables.$nina-secundario};
+    --bg-suave: #{variables.$nina-bg-suave};
+    --card-bg: #{variables.$nina-card-bg};
+}
+
+body.modo-nino {
+    background-color: variables.$nino-bg-suave;
+    --color-principal: #{variables.$nino-principal};
+    --color-secundario: #{variables.$nino-secundario};
+    --bg-suave: #{variables.$nino-bg-suave};
+    --card-bg: #{variables.$nino-card-bg};
+}
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+    gap: 10px;
+
+    @media (max-width: 900px) {
+        flex-direction: column;
+        height: auto;
+    }
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.header-logo-container {
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;    
+    gap: 15px;               
+    padding: 10px 20px;     
+}
+
+.text-stack {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-end;   
+    line-height: 1;         
+}
+
+.logo-title {
+    font-family: 'Arial Black', 'Arial Bold', sans-serif;
+    font-size: 2.8rem; 
+    font-weight: bold;
+    color: #1515e0f3; 
+    margin: 0;
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.15); 
+}
+
+.logo-subtitle {
+    font-size: 1.2rem; 
+    color: #555;      
+    font-weight: bold;
+    margin: 0;
+    margin-top: -3px; 
+}
+
+.logo-circle {
+    width: 65px;  
+    height: 65px;
+    border-radius: 50%;     
+    border: 3px solid #FFD700; 
+    overflow: hidden;        
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-img {
+    width: 100%;    
+    height: 100%;   
+    object-fit: cover; 
+}
+
+.info-card {
+    background: white; 
+    border-radius: 20px; 
+    padding: 20px; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+
+    h4 {
+        font-family: variables.$fuente-titulo;
+        text-align: center;
+        margin-bottom: 15px;
+        color: #4a4a4a;
+    }
+}
+
+.game-body { background-color: var(--card-bg); }

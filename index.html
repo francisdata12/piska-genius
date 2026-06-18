@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pikas Genius Academy</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        
+        <aside class="sidebar">
+
+    <div class="speech-bubble">
+        ¡Hola, Princesa Genio! ¡A brillar! 🌟
+    </div>
+
+    <div class="gender-selector-vertical">
+        <button onclick="cambiarEstilo('nino')" class="btn-avatar-v boy">
+            <img src="img/nino.jpeg" class="avatar-img" alt="Avatar Niño">
+        </button>
+        
+        <button onclick="cambiarEstilo('nina')" class="btn-avatar-v girl active-style">
+            <img src="img/nina.jpeg" class="avatar-img" alt="Avatar Niña">
+        </button>
+    </div>
+
+</aside>
+
+        <main class="main-content">
+            
+            <header class="header-logo-container">
+                <div class="text-stack">
+                    <h2 class="logo-title">PISKA</h2>
+                    <span class="logo-subtitle">Genius</span>
+                </div>
+                <div class="logo-circle">
+                    <img src="img/pisk.jpeg" class="logo-img" alt="Logo Piska">
+                </div>
+            </header>
+
+            <section class="info-card game-body">
+    <h4>¡PIKAS MEMORY GENIUS! 🧠</h4>
+    
+    <div class="controles-niveles">
+        <p>Selecciona tu nivel de desafío:</p>
+        <div class="flex-niveles">
+    <button onclick="configurarJuego('facil')" id="btn-facil" class="btn-nivel active">Fácil</button>
+    <button onclick="configurarJuego('medio')" id="btn-medio" class="btn-nivel">Medio</button>
+    <button onclick="configurarJuego('avanzado')" id="btn-avanzado" class="btn-nivel">Avanzado</button>
+</div>
+    </div>
+
+    <div class="stats-memoria">
+        <div>✨ Parejas: <span id="parejas-encontradas">0</span> / <span id="total-parejas">10</span></div>
+        <div>⏱️ Movimientos: <span id="movimientos">0</span></div>
+    </div>
+
+    <div id="tablero-memoria" class="tablero-grid facil">
+        </div>
+</section>
+
+            <section class="music-dashboard-card game-card">
+                <div class="music-header">
+                    <h2>🎶 CANTA LAS TABLAS CON PIKAS 🎶</h2>
+                    <p>Selecciona una tabla para escuchar su canción de Suno AI</p>
+                </div>
+                
+                <div class="controles-musica">
+                    <button onclick="reanudarMusica()">▶️ Play</button>
+                    <button onclick="pausarMusica()">⏸️ Pausa</button>
+                    <button onclick="detenerMusica()">⏹️ Stop</button>
+                </div>
+                
+                <audio id="audio-player"></audio>
+                
+                <div id="reproductor-info" class="reproductor-info">
+                    <span id="nombre-cancion-sonando">Música detenida ⏹️</span>
+                </div>
+                
+                <div class="songs-container">
+                    <button class="song-circle t2" onclick="playT(2)">2</button>
+                    <button class="song-circle t3" onclick="playT(3)">3</button>
+                    <button class="song-circle t4" onclick="playT(4)">4</button>
+                    <button class="song-circle t5" onclick="playT(5)">5</button>
+                    <button class="song-circle t6" onclick="playT(6)">6</button>
+                    <button class="song-circle t7" onclick="playT(7)">7</button>
+                    <button class="song-circle t8" onclick="playT(8)">8</button>
+                    <button class="song-circle t9" onclick="playT(9)">9</button>
+                    <button class="song-circle t10" onclick="playT(10)">10</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="proyecto.js"></script>
+</body>
+</html>

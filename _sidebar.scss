@@ -1,0 +1,98 @@
+@use '../base/variables';
+
+.sidebar {
+    width: 270px;                 
+    background-color: white;  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 35px 20px; // Un poquito más de espacio interno padding
+    height: 100vh;                
+    border-radius: 40px;
+    box-shadow: 5px 0 15px rgba(0,0,0,0.05);
+    margin: auto 30px;
+
+    @media (max-width: 900px) {
+        width: 100%;
+        flex-direction: column;
+        height: auto;
+        margin: 10px 0;
+        border-radius: 20px;
+    }
+}
+
+// LA BURBUJA DE BIENVENIDA (AHORA ARRIBA)
+.speech-bubble {
+    background: #F0F7F9; // Un fondo sutil para que resalte
+    padding: 15px 20px; 
+    border-radius: 20px;
+    font-weight: bold; 
+    text-align: center; 
+    font-size: 1.1rem;
+    color: #2c3e50;
+    width: 100%;
+    margin-bottom: 25px; // Separa el texto del primer avatar
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.02);
+}
+
+// EL CONTENEDOR DE AVATARES
+.gender-selector-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 25px; // Espacio equilibrado entre el niño y la niña
+    align-items: center;
+    width: 100%;
+}
+
+.btn-avatar-v {
+    width: 180px;
+    height: 180px;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 3px solid #ffffff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+
+    &:hover { 
+        transform: translateY(-3px); 
+        box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+
+    &.active-style {
+        transform: scale(1.15);
+        border-color: rgb(236, 244, 17);
+        box-shadow: 0 0 15px rgb(243, 136, 5);
+    }
+}
+
+.avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.speech-bubble {
+    background: white; 
+    padding: 15px; 
+    border-radius: 20px;
+    font-weight: bold; 
+    text-align: center; 
+    margin-bottom: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.lang-selector { 
+    margin-top: auto; 
+    display: flex; 
+    gap: 20px; 
+    
+    img { 
+        width: 80px; 
+        border-radius: 50%; 
+        border: 2px solid rgba(128, 128, 128, 0.7); 
+        cursor: pointer;
+    }
+}
